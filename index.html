@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Key Sequence Detection</title>
+</head>
+
+<body>
+    <script>
+        let keysPressed = [];
+        const secretKey = 'eneh';
+        /*keypress event listener*/
+        document.addEventListener('keyup', handleKeyPress);
+
+        function handleKeyPress(e) {
+            keysPressed.push(e.key);
+            if (keysPressed.length > secretKey.length) {
+                keysPressed.shift();
+            }
+
+            console.log(keysPressed);
+            if (keysPressed.join('') === secretKey) {
+                console.log('yeaaah! Unicorn is born');
+            }
+        }
+    </script>
+</body>
+
+</html>
