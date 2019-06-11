@@ -9,7 +9,12 @@
 </head>
 
 <body>
+    <h2>Try typing the secret Key</h2>
+    <div class="yeah"></div>
     <script>
+        let yeah = document.getElementsByClassName('yeah');
+        let unicornCount = 0;
+
         let keysPressed = [];
         const secretKey = 'eneh';
         /*keypress event listener*/
@@ -23,7 +28,9 @@
 
             console.log(keysPressed);
             if (keysPressed.join('') === secretKey) {
-                console.log('yeaaah! Unicorn is born');
+                unicornCount++;
+                console.log(`yeaaah! amuola Unicorn number ${unicornCount}`);
+                yeah[0].textContent = `yeaaah! Unicorn number ${unicornCount} is born!`;
             }
         }
     </script>
